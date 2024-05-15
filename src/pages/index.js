@@ -1,12 +1,12 @@
-import NavigationBar from "./HomePageComponents/NavigationBar";
-import CoverPic from "./HomePageComponents/CoverPic";
-import HomepageCards from "./HomePageComponents/HomepageCards";
-import HomepageContent from "./HomePageComponents/HomepageContent";
-import Gallery from "./HomePageComponents/Gallery";
-import Achievements from "./HomePageComponents/Achievements";
-import FolSub from "./HomePageComponents/FolSub";
-import Footer from "./HomePageComponents/Footer";
-import MessageForm from "./HomePageComponents/MessageForm";
+import NavigationBar from "@/modules/HomePage/Components/NavigationBar";
+import CoverPic from "@/modules/HomePage/Components/CoverPic";
+import HomepageCards from "@/modules/HomePage/Components/HomepageCards";
+import HomepageContent from "@/modules/HomePage/Components/HomepageContent";
+import Gallery from "@/modules/HomePage/Components/Gallery";
+import Achievements from "@/modules/HomePage/Components/Achievements";
+import FolSub from "@/modules/HomePage/Components/FolSub";
+import Footer from "@/modules/HomePage/Components/Footer";
+import MessageForm from "@/modules/HomePage/Components/MessageForm";
 function Home() {
   return (
     <div className="bg-black">

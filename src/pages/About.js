@@ -1,6 +1,6 @@
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
-import NavigationBar from "../HomePageComponents/NavigationBar";
+import NavigationBar from "@/modules/HomePage/Components/NavigationBar";
 const About = () => {
   const [currentImgAbt, setCurrentImgAbt] = useState(0);
   const images = [

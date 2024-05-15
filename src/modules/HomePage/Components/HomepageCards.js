@@ -1,6 +1,6 @@
 const HomePageCards = () => {
   return (
-    <div className="bg-slate-900 flex flex-row justify-center items-center m-2">
+    <div className="bg-black-500 flex flex-row justify-center items-center m-2">
       <div className="w-1/4 bg-slate-950 flex flex-col justify-center items-center p-10 m-5">
         <div className="w-1/3 mt-6 style={{ height: '30px' }}">
           <img
