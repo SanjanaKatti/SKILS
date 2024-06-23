@@ -28,6 +28,7 @@ const Gallery = () => {
         <button onClick={nextImage}>
           <FaChevronRight />
         </button>
+        <div></div>
       </div>
     </div>
   );

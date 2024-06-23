@@ -1,4 +1,9 @@
+import { useState } from "react";
+import Link from "next/link";
+
 const HomepageContent = () => {
+  const [readMore, setReadMore] = useState(false);
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center mb-10">
@@ -52,11 +57,23 @@ const HomepageContent = () => {
             Dandekar.
           </p>
         </div>
-        <div>
-          <p className="font-thin text-xl text-red-600 ml-20 mb-10">
+        {readMore ? (
+          <div
+            className="w-40 rounded-lg bg-red-600 ml-20 p-3 cursor-pointer"
+            onMouseLeave={() => setReadMore(false)}
+          >
+            <Link href="/About">
+              <div className="text-white p-5">Read More</div>
+            </Link>
+          </div>
+        ) : (
+          <div
+            className="font-light ml-20 underline text-red-600 cursor-pointer"
+            onMouseEnter={() => setReadMore(true)}
+          >
             Read More
-          </p>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

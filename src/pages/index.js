@@ -17,7 +17,7 @@ function Home() {
       <Gallery />
       <Achievements />
       <FolSub />
-      {/* <MessageForm /> */}
+      <MessageForm />
       <Footer />
     </div>
   );
