@@ -18,7 +18,7 @@ const Productions = () => {
   };
   return (
     <div>
-      <NavigationBar />
+      <NavigationBar currentPage="Productions" />
       <div className="flex flex-col justify-center items-center m-20">
         <div>
           <h1 className="text-6xl mb-10">Productions</h1>

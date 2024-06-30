@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Gallery = () => {
+const HomepageGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
     "/Image1.jpeg",
@@ -33,4 +33,4 @@ const Gallery = () => {
     </div>
   );
 };
-export default Gallery;
+export default HomepageGallery;

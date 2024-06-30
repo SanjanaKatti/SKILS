@@ -2,7 +2,7 @@ import NavigationBar from "@/modules/HomePage/Components/NavigationBar";
 import CoverPic from "@/modules/HomePage/Components/CoverPic";
 import HomepageCards from "@/modules/HomePage/Components/HomepageCards";
 import HomepageContent from "@/modules/HomePage/Components/HomepageContent";
-import Gallery from "@/modules/HomePage/Components/Gallery";
+import HomepageGallery from "@/modules/HomePage/Components/HomepageGallery";
 import Achievements from "@/modules/HomePage/Components/Achievements";
 import FolSub from "@/modules/HomePage/Components/FolSub";
 import Footer from "@/modules/HomePage/Components/Footer";
@@ -10,11 +10,11 @@ import MessageForm from "@/modules/HomePage/Components/MessageForm";
 function Home() {
   return (
     <div className="bg-black">
-      <NavigationBar />
+      <NavigationBar currentPage="Home" />
       <CoverPic />
       <HomepageContent />
       <HomepageCards />
-      <Gallery />
+      <HomepageGallery />
       <Achievements />
       <FolSub />
       <MessageForm />

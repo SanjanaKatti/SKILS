@@ -21,7 +21,7 @@ const About = () => {
   };
   return (
     <div>
-      <NavigationBar />
+      <NavigationBar currentPage="About" />
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-6xl text-red-500 font-bold text-center m-14">
           {" "}

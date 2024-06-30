@@ -1,11 +1,11 @@
 const CoverPic = () => {
   return (
-    <div className="flex justify-center mb-20">
+    <div className="flex justify-center mb-20 pt-24">
       <div
-        className="relative bg-cover bg-center h-screen w-2/3"
+        className="relative bg-cover bg-center h-screen w-full"
         style={{ backgroundImage: 'url("/coverpic.png")' }}
       >
-        <div className="absolute bottom-0 w-full bg-black bg-opacity-40 text-white text-center py-5">
+        <div className="absolute bottom-0 w-full text-white text-center py-5">
           <h1 className="text-6xl font-bold pt-8">S H R U T I P A T K I</h1>
           <h3 className="text-4xl font-bold pt-8">KATHAK EXPONENT</h3>
           <div className="flex justify-center mt-8 mb-8">
