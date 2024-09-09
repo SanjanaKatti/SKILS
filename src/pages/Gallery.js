@@ -5,7 +5,7 @@ import NavigationBar from "@/modules/HomePage/Components/NavigationBar";
 const Gallery = () => {
   const eventImages = ["/Concord-1.jpg", "/Concord-2.jpg", "/KrishnaVedh.jpg"];
   const [selectedDanceGallery, setSelectedDanceGallery] = useState("");
-  const eventsAg = [
+  const eventsAg6 = [
     "/AG6/AAG61.jpeg",
     "/AG6/AG62.jpeg",
     "/AG6/AG63.jpeg",
@@ -15,6 +15,8 @@ const Gallery = () => {
     "/AG6/AG67.jpeg",
     "/AG6/AG68.jpeg",
     "/AG6/AG69.jpeg",
+  ];
+  const eventsAg5 = [
     "/AG5/AG51.jpeg",
     "/AG5/AG52.jpeg",
     "/AG5/AG53.jpeg",
@@ -25,6 +27,8 @@ const Gallery = () => {
     "/AG5/AG58.jpeg",
     "/AG5/AG59.jpeg",
     "/AG5/AG510.jpeg",
+  ];
+  const eventsAg4 = [
     "/AG4/Ag41.jpeg",
     "/AG4/Ag42.jpeg",
     "/AG4/Ag43.jpeg",
@@ -36,6 +40,8 @@ const Gallery = () => {
     "/AG4/Ag49.jpeg",
     "/AG4/Ag410.jpeg",
     "/AG4/Ag411.jpeg",
+  ];
+  const eventsAg3 = [
     "/AG3/Ag31.jpeg",
     "/AG3/Ag32.jpeg",
     "/AG3/Ag33.jpeg",
@@ -46,12 +52,16 @@ const Gallery = () => {
     "/AG3/Ag38.jpeg",
     "/AG3/Ag39.jpeg",
     "/AG3/Ag310.jpeg",
+  ];
+  const eventsAg2 = [
     "/AG2/AG21.jpeg",
     "/AG2/AG22.jpeg",
     "/AG2/AG23.jpeg",
     "/AG2/AG24.jpeg",
     "/AG2/AG25.jpeg",
     "/AG2/AG26.jpeg",
+  ];
+  const eventsAg1 = [
     "/AG1/AG11.jpeg",
     "/AG1/AG12.jpeg",
     "/AG1/AG13.jpeg",
@@ -105,7 +115,7 @@ const Gallery = () => {
         </div>
         <div className="mt-8">
           {selectedDanceGallery === "All" && (
-            <div className="flex flex-row bg-red-500">
+            <div className="flex flex-row">
               <div className="h-96 w-1/3">
                 <img
                   src={eventImages[0]}
@@ -178,451 +188,60 @@ const Gallery = () => {
         </div>
         <div className="mt-8">
           {selectedAg === "AG6" && (
-            <div className="flex flex-col">
-              <div className="flex flex-row">
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[0]}
-                    alt="ag61"
-                    className="w-full h-96 m-2"
-                  />
+            <div className="flex flex-wrap">
+              {eventsAg6.map((image, index) => (
+                <div key={index} className="w-1/2 p-2">
+                  <img src={image} alt={`AG6${index}`} />
                 </div>
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[1]}
-                    alt="ag62"
-                    className="w-full h-96 m-2"
-                  />
+              ))}
+            </div>
+          )}
+          {selectedAg === "AG5" && (
+            <div className="flex flex-wrap">
+              {eventsAg5.map((image, index) => (
+                <div key={index} className="w-1/2 p-2">
+                  <img src={image} alt={`AG5${index}`} />
                 </div>
-              </div>
-              <div className="flex flex-row">
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[2]}
-                    alt="ag63"
-                    className="w-full h-96 m-2"
-                  />
+              ))}
+            </div>
+          )}
+          {selectedAg === "AG4" && (
+            <div className="flex flex-wrap">
+              {eventsAg4.map((image, index) => (
+                <div key={index} className="w-1/2 p-2">
+                  <img src={image} alt={`AG4${index}`} />
                 </div>
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[3]}
-                    alt="ag64"
-                    className="w-full h-96 m-2"
-                  />
+              ))}
+            </div>
+          )}
+          {selectedAg === "AG3" && (
+            <div className="flex flex-wrap">
+              {eventsAg3.map((image, index) => (
+                <div key={index} className="w-1/2 p-2">
+                  <img src={image} alt={`AG3${index}`} />
                 </div>
-              </div>
-              <div className="flex flex-row">
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[4]}
-                    alt="ag65"
-                    className="w-full h-96 m-2"
-                  />
+              ))}
+            </div>
+          )}
+          {selectedAg === "AG2" && (
+            <div className="flex flex-wrap">
+              {eventsAg2.map((image, index) => (
+                <div key={index} className="w-1/2 p-2">
+                  <img src={image} alt={`AG2${index}`} />
                 </div>
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[5]}
-                    alt="ag66"
-                    className="w-full h-96 m-2"
-                  />
+              ))}
+            </div>
+          )}
+          {selectedAg === "AG1" && (
+            <div className="flex flex-wrap">
+              {eventsAg1.map((image, index) => (
+                <div key={index} className="w-1/2 p-2">
+                  <img src={image} alt={`AG1${index}`} />
                 </div>
-              </div>
-              <div className="flex flex-row">
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[6]}
-                    alt="ag67"
-                    className="w-full h-96 m-2"
-                  />
-                </div>
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[7]}
-                    alt="ag68"
-                    className="w-full h-96 m-2"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-row">
-                <div className="w-1/2">
-                  <img
-                    src={eventsAg[8]}
-                    alt="ag69"
-                    className="w-full h-96 m-2"
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           )}
         </div>
-      </div>
-
-      <div className="mt-8">
-        {selectedAg === "AG5" && (
-          <div className="flex flex-col">
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img src={eventsAg[9]} alt="ag51" className="w-full h-96 m-2" />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[10]}
-                  alt="ag52"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[11]}
-                  alt="ag53"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[12]}
-                  alt="ag54"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[13]}
-                  alt="ag55"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[14]}
-                  alt="ag56"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[15]}
-                  alt="ag57"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[16]}
-                  alt="ag58"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[17]}
-                  alt="ag59"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[18]}
-                  alt="ag510"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="mt-8">
-        {selectedAg === "AG4" && (
-          <div className="flex flex-col">
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[19]}
-                  alt="ag41"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[20]}
-                  alt="ag42"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[21]}
-                  alt="ag43"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[22]}
-                  alt="ag44"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[23]}
-                  alt="ag45"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[24]}
-                  alt="ag46"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[25]}
-                  alt="ag47"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[26]}
-                  alt="ag48"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[27]}
-                  alt="ag49"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[28]}
-                  alt="ag410"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[29]}
-                  alt="ag411"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-          </div>
-        )}
-        ;
-      </div>
-      <div className="mt-8">
-        {selectedAg === "AG3" && (
-          <div className="flex flex-col">
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[30]}
-                  alt="ag31"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[31]}
-                  alt="ag32"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[32]}
-                  alt="ag33"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[33]}
-                  alt="ag34"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[34]}
-                  alt="ag35"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[35]}
-                  alt="ag36"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[36]}
-                  alt="ag37"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[37]}
-                  alt="ag38"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[38]}
-                  alt="ag39"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[39]}
-                  alt="ag310"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="mt-8">
-        {selectedAg === "AG2" && (
-          <div className="flex flex-col">
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[40]}
-                  alt="ag21"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[41]}
-                  alt="ag22"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[42]}
-                  alt="ag23"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[43]}
-                  alt="ag24"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[44]}
-                  alt="ag25"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[45]}
-                  alt="ag26"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-          </div>
-        )}
-        ;
-      </div>
-      <div className="mt-8">
-        {selectedAg === "AG1" && (
-          <div className="flex flex-col">
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[46]}
-                  alt="ag11"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[47]}
-                  alt="ag12"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[48]}
-                  alt="ag13"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[49]}
-                  alt="ag14"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row">
-              <div className="w-1/2">
-                <img
-                  src={eventsAg[50]}
-                  alt="ag15"
-                  className="w-full h-96 m-2"
-                />
-              </div>
-            </div>
-          </div>
-        )}
-        ;
       </div>
     </div>
   );

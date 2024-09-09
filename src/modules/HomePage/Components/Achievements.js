@@ -46,13 +46,13 @@ const Achievements = () => {
   }, [awardscount]);
 
   return (
-    <div>
+    <div className="flex items-center justify-center w-full m-10">
       <div
-        className="h-96 flex flex-row justify-center items-center m-10"
-        style={{ backgroundImage: 'url("/kathakpic2.jpeg")' }}
+        className="h-96 w-full max-w-[1000px] flex flex-row justify-center items-center bg-cover bg-center"
+        style={{ backgroundImage: 'url("/homepagebg.jpeg")' }}
       >
         <div className="w-full bg-black bg-opacity-50 py-5 flex justify-center">
-          <div className="h-1/2 w-1/6 flex flex-col justify-center items-center border border-red-600 p-5 m-5">
+          <div className="h-1/2 w-1/6 flex flex-col justify-center items-center border border-red-600 p-5 mr-5 my-5">
             <div className="text-4xl">{stucount} +</div>
             <div className="mt-4">Students</div>
           </div>
@@ -64,7 +64,7 @@ const Achievements = () => {
             <div className="text-4xl">{performancecount} +</div>
             <div className="mt-4">Performances</div>
           </div>
-          <div className="h-1/2 w-1/6 flex flex-col justify-center items-center border border-red-600 p-5 m-5">
+          <div className="h-1/2 w-1/6 flex flex-col justify-center items-center border border-red-600 p-5 ml-5 my-5">
             <div className="text-4xl">{awardscount} +</div>
             <div className="mt-4">Awards</div>
           </div>

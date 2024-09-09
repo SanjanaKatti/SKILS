@@ -91,35 +91,34 @@ const FAQs = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-row mx-auto w-full max-w-[1000px] items-center justify-between content-center h-full">
       <NavigationBar />
-      <div>
-        <h1 className="text-6xl text-red-500 font-bold text-center m-14">
+      <div className="w-full">
+        <h1 className="text-6xl text-red-500 font-bold text-center mt-36 mb-10 max-w-[1000px] mx-auto">
           FAQs
         </h1>
-        <div>
+        <div className="w-full max-w-[1000px] mx-auto p-2">
           {faqClicked.map((question, index) => (
-            <div key={index}>
-              {!question.isClicked ? (
-                <div
-                  onClick={() => handleClick(index)}
-                  className="flex flex-row text-xl bg-slate-300 text-neutral-950 m-10 mx-20 p-2 hover:text-red-600"
-                >
-                  <FaChevronRight />
-                  <h2 className="ml-4">{question.faq}</h2>
-                </div>
-              ) : (
-                <div>
-                  <div
-                    onClick={() => handleClick(index)}
-                    className="flex flex-row text-xl bg-slate-300 text-red-600 mt-10 mb-5 mx-20 p-2"
-                  >
+            <div key={index} className="p-4">
+              <div
+                onClick={() => handleClick(index)}
+                className="flex flex-row justify-start items-center text-xl bg-slate-300 text-neutral-950 cursor-pointer hover:text-red-600"
+              >
+                {question.isClicked ? (
+                  <>
                     <FaChevronDown />
-                    <h2 className="ml-4">{question.faq}</h2>
-                  </div>
-                  <div className="mb-10 mx-20">
-                    <p>{question.answer}</p>
-                  </div>
+                    <h2 className="ml-4 text-left p-2">{question.faq}</h2>
+                  </>
+                ) : (
+                  <>
+                    <FaChevronRight />
+                    <h2 className="ml-4 text-left p-2">{question.faq}</h2>
+                  </>
+                )}
+              </div>
+              {question.isClicked && (
+                <div className="my-2 font-light text-gray-400">
+                  <p>{question.answer}</p>
                 </div>
               )}
             </div>

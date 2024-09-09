@@ -7,6 +7,17 @@ import Achievements from "@/modules/HomePage/Components/Achievements";
 import FolSub from "@/modules/HomePage/Components/FolSub";
 import Footer from "@/modules/HomePage/Components/Footer";
 import MessageForm from "@/modules/HomePage/Components/MessageForm";
+import React from "react";
+import dynamic from "next/dynamic";
+import "leaflet/dist/leaflet.css";
+
+const WorldMap = dynamic(
+  () => import("@/modules/HomePage/Components/WorldMap"),
+  {
+    ssr: false,
+  }
+);
+
 function Home() {
   return (
     <div className="bg-black">
@@ -18,6 +29,7 @@ function Home() {
       <Achievements />
       <FolSub />
       <MessageForm />
+      <WorldMap />
       <Footer />
     </div>
   );

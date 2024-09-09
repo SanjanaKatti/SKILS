@@ -19,9 +19,11 @@ const Productions = () => {
   return (
     <div>
       <NavigationBar currentPage="Productions" />
-      <div className="flex flex-col justify-center items-center m-20">
+      <div className="flex flex-col justify-center items-center">
         <div>
-          <h1 className="text-6xl mb-10">Productions</h1>
+          <h1 className="text-6xl font-bold mt-36 mb-20 text-red-500">
+            Productions
+          </h1>
         </div>
         <div className="flex flex-row justify-between">
           <button onClick={previousImage}>
