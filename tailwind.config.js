@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Futura", ...defaultTheme.fontFamily.sans], // Replace default sans font with Futura
+        sans: ["Futura", ...defaultTheme.fontFamily.sans],
         oswald: ["Oswald", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
       },

@@ -1,10 +1,13 @@
 import { useState } from "react";
+import Link from "next/link";
+
 const HomePageCards = () => {
   const [showForm, setShowForm] = useState(false);
 
   const handleInquireClick = () => {
     setShowForm(!showForm);
   };
+
   return (
     <div className="bg-black-500 flex flex-row justify-center items-center m-2">
       <div className="w-1/4 bg-slate-950 flex flex-col justify-center items-center p-10 m-5">
@@ -43,7 +46,9 @@ const HomePageCards = () => {
             beautiful.{" "}
           </p>
         </div>
-        <div className="rounded-lg bg-red-600 mt-20 p-3">VIEW MORE</div>
+        <Link href="/Gallery">
+          <div className="rounded-lg bg-red-600 mt-20 p-3">VIEW MORE</div>
+        </Link>
       </div>
       <div className="w-1/4 bg-slate-950 flex flex-col justify-center items-center p-10 m-5">
         <div className="w-1/3 style={{ height: '30px' }}">
