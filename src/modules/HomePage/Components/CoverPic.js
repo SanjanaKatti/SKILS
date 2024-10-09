@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const CoverPic = () => {
   const [offsetX, setOffsetX] = useState(0);
@@ -29,17 +30,24 @@ const CoverPic = () => {
         }}
       >
         <div className="absolute bottom-0 w-full text-white text-center py-5">
-          <h1 className="text-8xl font-roboto pt-8 tracking-wide">
-            S H R U T I P A T K I
-          </h1>
+          <h1 className="text-8xl pt-8 tracking-wide">S H R U T I P A T K I</h1>
           <h3 className="text-4xl font-bold pt-8">KATHAK EXPONENT</h3>
           <div className="flex justify-center mt-8 mb-8 gap-4">
+            <a
+              href="https://www.facebook.com/skilshruti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ background: "white" }}
+              className={`${circleClasses} hover:animate-bounce`}
+            >
+              <FaFacebook style={iconStyles} />
+            </a>
             <a
               href="https://www.instagram.com/skils_shruti"
               target="_blank"
               rel="noopener noreferrer"
               style={{ background: "white" }}
-              className={circleClasses}
+              className={`${circleClasses} hover:animate-bounce`}
             >
               <FaInstagram style={iconStyles} />
             </a>
@@ -48,7 +56,7 @@ const CoverPic = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{ background: "white" }}
-              className={circleClasses}
+              className={`${circleClasses} hover:animate-bounce`}
             >
               <FaYoutube style={iconStyles} />
             </a>

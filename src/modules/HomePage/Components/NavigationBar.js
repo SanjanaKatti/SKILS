@@ -10,7 +10,7 @@ const NavigationBar = ({ currentPage }) => {
   const [contactus, setContactus] = useState(false);
   return (
     <div className="fixed top-0 left-0 right-0 h-24 z-50 bg-black">
-      <div className="flex flex-row mx-auto max-w-[1000px] items-center justify-between content-center h-full font-oswald">
+      <div className="flex flex-row mx-auto max-w-[1000px] items-center justify-between content-center h-full">
         <div>
           <img className="w-28 h-auto" src="/skils-LOGO.png" />
         </div>

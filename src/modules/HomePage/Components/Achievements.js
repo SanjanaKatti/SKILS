@@ -46,7 +46,7 @@ const Achievements = () => {
   }, [awardscount]);
 
   return (
-    <div className="flex items-center justify-center w-full m-10">
+    <div className="flex items-center justify-center w-full mx-auto max-w-[1000px] m-20">
       <div
         className="h-96 w-full max-w-[1000px] flex flex-row justify-center items-center bg-cover bg-center"
         style={{ backgroundImage: 'url("/homepagebg.jpeg")' }}

@@ -40,7 +40,7 @@ const About = () => {
             <img
               src={images[currentImgAbt]}
               alt="image"
-              className="w-full h-full mx-4 object-cover"
+              className="w-full h-full mx-4 object-contain"
             />
             <button onClick={nextImgAbt}>
               <FaChevronRight />
@@ -65,27 +65,38 @@ const About = () => {
           </div>
         </div>
       </div>
-
       <div className="w-full flex flex-col items-center mt-28">
         <h1 className="text-6xl text-red-500 font-bold text-center mb-16">
           ACHIEVEMENTS
         </h1>
-        {[
-          "Rabindra Puraskar by the Upasana Foundation, Pune (2015)",
-          "Pt. Ranganath Bendre Award for standing first All over India in the NRITYA ALANKAR examination (2014)",
-          "Third place in the West Zone Inter University Youth Festival, Shivaji University, Kolhapur (2013)",
-          "First place at IIT Powai's Cultural Festival MOOD INDIGO, National Level Solo Classical Dance Competition (2012)",
-          "Lt. Pt. Lachchu Maharaj Award by the Prerna Foundation, Pune (2010)",
-        ].map((achievement, index) => (
-          <div
-            key={index}
-            className="border border-slate-500 w-full max-w-[1000px] mx-auto my-4 px-4 lg:px-10 py-4 font-thin"
-          >
-            <ul className="list-disc">
-              <li>{achievement}</li>
-            </ul>
+        <div
+          className="relative bg-cover bg-center w-full"
+          style={{
+            backgroundImage: 'url("/Achievements Background image.jpg")',
+          }}
+        >
+          {/* Overlay to darken the background */}
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+
+          <div className="relative z-10 w-full flex flex-col items-center py-8">
+            {[
+              "Rabindra Puraskar by the Upasana Foundation, Pune (2015)",
+              "Pt. Ranganath Bendre Award for standing first All over India in the NRITYA ALANKAR examination (2014)",
+              "Third place in the West Zone Inter University Youth Festival, Shivaji University, Kolhapur (2013)",
+              "First place at IIT Powai's Cultural Festival MOOD INDIGO, National Level Solo Classical Dance Competition (2012)",
+              "Lt. Pt. Lachchu Maharaj Award by the Prerna Foundation, Pune (2010)",
+            ].map((achievement, index) => (
+              <div
+                key={index}
+                className="border border-slate-500 w-full max-w-[1000px] mx-auto my-4 px-4 lg:px-10 py-4 bg-black bg-opacity-40 text-white"
+              >
+                <ul className="list-disc">
+                  <li>{achievement}</li>
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
 
       <div className="w-full mt-28 flex justify-center">

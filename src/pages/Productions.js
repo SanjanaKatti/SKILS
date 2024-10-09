@@ -20,10 +20,8 @@ const Productions = () => {
     <div>
       <NavigationBar currentPage="Productions" />
       <div className="flex flex-col justify-center items-center">
-        <div>
-          <h1 className="text-6xl font-bold mt-36 mb-20 text-red-500">
-            Productions
-          </h1>
+        <div className="font-bold mb-20 mt-36 text-red-500">
+          <h1 className="text-6xl">PRODUCTIONS</h1>
         </div>
         <div className="flex flex-row justify-between">
           <button onClick={previousImage}>

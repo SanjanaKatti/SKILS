@@ -2,8 +2,6 @@ import NavigationBar from "@/modules/HomePage/Components/NavigationBar";
 
 const OtherWorks = () => {
   const textStyleMain = {
-    color: "#FF264A",
-    fontFamily: '"Oswald", Sans-serif',
     fontSize: "60px",
     textTransform: "uppercase",
     letterSpacing: "2px",
@@ -11,9 +9,12 @@ const OtherWorks = () => {
   return (
     <div>
       <NavigationBar currentPage="OtherWorks" />
-      <div className="flex flex-col justify-center items-center m-20">
+      <div className="flex flex-col justify-center items-center">
         <div>
-          <h1 style={textStyleMain} className="text-6xl m-10 ">
+          <h1
+            style={textStyleMain}
+            className="text-6xl text-red-500 font-bold pt-36"
+          >
             OTHER WORKS
           </h1>
         </div>

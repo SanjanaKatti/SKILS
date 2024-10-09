@@ -70,14 +70,11 @@ const Gallery = () => {
   ];
   const [selectedAg, setSelectedAg] = useState("");
   const textStyleMain = {
-    color: "#FF264A",
-    fontFamily: '"Oswald", Sans-serif',
     fontSize: "60px",
     textTransform: "uppercase",
     letterSpacing: "2px",
   };
   const textStyleSub = {
-    fontFamily: '"Oswald", Sans-serif',
     fontSize: "20px",
     fontWeight: "300",
   };
@@ -93,7 +90,10 @@ const Gallery = () => {
   return (
     <div className="flex flex-col">
       <NavigationBar currentPage="Gallery" />
-      <div style={textStyleMain} className="font-bold text-center pt-40 pb-10">
+      <div
+        style={textStyleMain}
+        className="font-bold text-center text-red-500 pt-36 pb-10"
+      >
         DANCE GALLERY
       </div>
       <div className="flex flex-col">

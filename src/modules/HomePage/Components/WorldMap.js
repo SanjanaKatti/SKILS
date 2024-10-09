@@ -15,10 +15,13 @@ const WorldMap = () => {
   }
 
   const locations = [
-    { name: "New York", position: [40.7128, -74.006] },
-    { name: "London", position: [51.5074, -0.1278] },
-    { name: "Tokyo", position: [35.6762, 139.6503] },
     { name: "Pune", position: [18.5204, 73.8567] },
+    { name: "Mumbai", position: [19.076, 72.8777] },
+    { name: "Bengaluru", position: [12.9716, 77.5946] },
+    { name: "Cochin", position: [9.9312, 76.2673] },
+    { name: "US", position: [37.0902, -95.7129] }, // Generic location in the US
+    { name: "London", position: [51.5074, -0.1278] },
+    { name: "Madrid", position: [40.4168, -3.7038] },
   ];
 
   delete L.Icon.Default.prototype._getIconUrl;
@@ -32,7 +35,7 @@ const WorldMap = () => {
   });
 
   return (
-    <div className="flex flex-row mx-auto max-w-[1000px] items-center justify-between content-center h-full">
+    <div className="flex flex-row m-20 mx-auto max-w-[1000px] items-center justify-between content-center h-full">
       <MapContainer
         center={[20.0, 0.0]}
         zoom={2}
