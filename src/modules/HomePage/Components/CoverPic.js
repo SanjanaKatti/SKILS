@@ -7,7 +7,7 @@ const CoverPic = () => {
   const [offsetX, setOffsetX] = useState(0);
   const circleClasses =
     "w-12 h-12 rounded-full flex justify-center items-center";
-  const iconStyles = { fontSize: "24px", color: "#DA3816" }; // Corrected the color
+  const iconStyles = { fontSize: "24px", color: "#DA3816" };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +19,7 @@ const CoverPic = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <div className="flex justify-center mb-20 pt-24">
       <div
@@ -30,8 +31,12 @@ const CoverPic = () => {
         }}
       >
         <div className="absolute bottom-0 w-full text-white text-center py-5">
-          <h1 className="text-8xl pt-8 tracking-wide">S H R U T I P A T K I</h1>
-          <h3 className="text-4xl font-bold pt-8">KATHAK EXPONENT</h3>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl pt-8 tracking-wide">
+            S H R U T I P A T K I
+          </h1>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold pt-8">
+            KATHAK EXPONENT
+          </h3>
           <div className="flex justify-center mt-8 mb-8 gap-4">
             <a
               href="https://www.facebook.com/skilshruti/"

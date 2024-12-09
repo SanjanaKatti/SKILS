@@ -29,12 +29,12 @@ const About = () => {
     <div className="w-full max-w-full mx-auto flex flex-col items-center justify-center h-full">
       <NavigationBar currentPage="About" />
       <div className="flex flex-col mx-auto max-w-[1000px] items-center justify-center">
-        <h1 className="text-6xl text-red-500 font-bold text-center mt-36 mx-14 mb-14">
+        <h1 className="text-4xl sm:text-6xl text-red-500 font-bold text-center mt-10 sm:mt-36 mx-4 sm:mx-14 mb-10 sm:mb-14">
           ABOUT THE ARTIST
         </h1>
-        <div className="flex flex-col lg:flex-row items-center justify-center w-full">
-          <div className="flex flex-row w-full max-w-lg aspect-square items-center justify-center mx-4 lg:mx-10">
-            <button onClick={prevImgAbt}>
+        <div className="flex flex-col sm:flex-row items-center justify-center w-full">
+          <div className="flex flex-row w-full max-w-[350px] sm:max-w-lg aspect-square items-center justify-center mx-4 sm:mx-10">
+            <button onClick={prevImgAbt} className="text-2xl sm:text-4xl">
               <FaChevronLeft />
             </button>
             <img
@@ -42,16 +42,16 @@ const About = () => {
               alt="image"
               className="w-full h-full mx-4 object-contain"
             />
-            <button onClick={nextImgAbt}>
+            <button onClick={nextImgAbt} className="text-2xl sm:text-4xl">
               <FaChevronRight />
             </button>
           </div>
-          <div className="text-thin lg:ml-10 lg:w-1/2 text-center lg:text-left mt-6 lg:mt-0 mx-4">
-            <p className="mb-6 font-thin">
+          <div className="text-thin sm:ml-10 sm:w-1/2 text-center sm:text-left mt-6 sm:mt-0 mx-4">
+            <p className="mb-4 sm:mb-6 font-thin">
               Shruti is a disciple of Pandit Rajendra Gangani ji, the
               illustrious master and leading light of Jaipur gharana.
             </p>
-            <p className="mb-6 font-thin">
+            <p className="mb-4 sm:mb-6 font-thin">
               She began her dance journey in 1997 when she was 7 years old,
               enamored by the beauty, grace, and poise of Kathak. Through her
               formative years, her Gurus were the doyens of Benaras and Lucknow
@@ -65,8 +65,9 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col items-center mt-28">
-        <h1 className="text-6xl text-red-500 font-bold text-center mb-16">
+
+      <div className="w-full flex flex-col items-center mt-14 sm:mt-28">
+        <h1 className="text-4xl sm:text-6xl text-red-500 font-bold text-center mb-12 sm:mb-16">
           ACHIEVEMENTS
         </h1>
         <div
@@ -78,7 +79,7 @@ const About = () => {
           {/* Overlay to darken the background */}
           <div className="absolute inset-0 bg-black opacity-60"></div>
 
-          <div className="relative z-10 w-full flex flex-col items-center py-8">
+          <div className="relative z-10 w-full flex flex-col items-center py-6 sm:py-8">
             {[
               "Rabindra Puraskar by the Upasana Foundation, Pune (2015)",
               "Pt. Ranganath Bendre Award for standing first All over India in the NRITYA ALANKAR examination (2014)",
@@ -88,7 +89,7 @@ const About = () => {
             ].map((achievement, index) => (
               <div
                 key={index}
-                className="border border-slate-500 w-full max-w-[1000px] mx-auto my-4 px-4 lg:px-10 py-4 bg-black bg-opacity-40 text-white"
+                className="border border-slate-500 w-full max-w-[1000px] mx-auto my-4 sm:my-6 px-4 sm:px-10 py-4 bg-black bg-opacity-40 text-white"
               >
                 <ul className="list-disc">
                   <li>{achievement}</li>
@@ -99,18 +100,19 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-full mt-28 flex justify-center">
+      <div className="w-full mt-14 sm:mt-28 flex justify-center">
         <div className="max-w-[1000px] w-full">
-          <h1 className="text-6xl text-red-500 font-bold text-center mb-16">
+          <h1 className="text-4xl sm:text-6xl text-red-500 font-bold text-center mb-12 sm:mb-16">
             WHAT WE DO
           </h1>
-          <div className="flex flex-col lg:flex-row items-stretch justify-between mx-4 lg:mx-0 space-y-10 lg:space-y-0 lg:space-x-10">
-            <div className="lg:w-1/2 flex flex-col space-y-6">
+          <div className="flex flex-col sm:flex-row items-stretch justify-between mx-4 sm:mx-0 space-y-10 sm:space-y-0 sm:space-x-10">
+            <div className="sm:w-1/2 flex flex-col space-y-6">
               <div className="border border-red-900">
                 <iframe
                   width="100%"
                   height="315"
                   src="https://www.youtube.com/embed/RFCGbQ6nKqc"
+                  title="YouTube video 1"
                 ></iframe>
               </div>
               <div className="border border-red-900">
@@ -118,11 +120,12 @@ const About = () => {
                   width="100%"
                   height="315"
                   src="https://www.youtube.com/embed/pS4ors16XmY&t"
+                  title="YouTube video 2"
                 ></iframe>
               </div>
             </div>
-            <div className="bg-red-900 text-white font-light lg:w-1/2 p-10 flex-grow flex flex-col justify-center">
-              <p className="mb-10">
+            <div className="bg-red-900 text-white font-light sm:w-1/2 p-6 sm:p-10 flex-grow flex flex-col justify-center">
+              <p className="mb-6 sm:mb-10">
                 The goal of SKILS is the holistic development of students into
                 artistes and the best versions of themselves. Being a registered
                 teacher of the Akhil Bharatiya Gandharva Mahavidyalaya, Mumbai,
@@ -137,7 +140,7 @@ const About = () => {
                 platform where students have the stage to dance and present
                 everything they have learned to a mesmerized audience – with
                 traditional kathak dances as well as choreographies to modern
-                pieces relevant to recent times and social dynamic.
+                pieces relevant to recent times and social dynamics.
               </p>
             </div>
           </div>

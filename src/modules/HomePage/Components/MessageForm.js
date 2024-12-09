@@ -62,12 +62,12 @@ const MessageForm = () => {
   };
 
   return (
-    <div className="flex flex-col m-20 mx-auto max-w-[1000px] justify-between h-full font-oswald">
-      <h2 className="flex flex-row text-6xl justify-center font-bold text-red-600 my-10">
+    <div className="flex flex-col sm:m-20 mx-auto max-w-[1000px] justify-between h-full font-oswald">
+      <h2 className="text-4xl sm:text-6xl text-center font-bold text-red-600 my-10">
         SAY HELLO!
       </h2>
       <div className="w-full flex flex-col justify-center items-center">
-        <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full sm:w-1/2" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <input
               {...register("Name")}
@@ -111,7 +111,7 @@ const MessageForm = () => {
           <div className="flex flex-col justify-center items-center mt-5">
             <input
               type="submit"
-              className="w-60 h-10 bg-red-600 text-white mt-2 mb-6 rounded cursor-pointer"
+              className="w-full sm:w-60 h-10 bg-red-600 text-white mt-2 mb-6 rounded cursor-pointer"
               value="Submit"
             />
           </div>
@@ -123,108 +123,3 @@ const MessageForm = () => {
 };
 
 export default MessageForm;
-// import { useState } from "react";
-// import { useForm } from "react-hook-form";
-
-// const MessageForm = () => {
-//   const {
-//     register,
-//     handleSubmit,
-//     formState: { errors },
-//   } = useForm();
-//   const [result, setResult] = useState("");
-
-//   const onSubmit = async (data) => {
-//     setResult("Sending...");
-
-//     try {
-//       const response = await fetch(
-//         "https://2nkh36kn7q2nphv5xgmc6xg3ay0ayhuq.lambda-url.ap-southeast-2.on.aws/",
-//         {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json",
-//           },
-//           body: JSON.stringify(data),
-//         }
-//       );
-
-//       if (response.ok) {
-//         const result = await response.json();
-//         setResult("Form Submitted Successfully and data stored in DynamoDB!");
-//         console.log("Response from Lambda:", result);
-//       } else {
-//         const errorData = await response.json();
-//         setResult("An error occurred: " + errorData.message);
-//         console.error("Error response from Lambda:", errorData);
-//       }
-//     } catch (error) {
-//       setResult("Request failed. Please try again.");
-//       console.error("Request error:", error);
-//     }
-//   };
-
-//   return (
-//     <div className="my-20">
-//       <h2 className="flex flex-row text-6xl justify-center font-bold text-red-600 my-10">
-//         SAY HELLO!
-//       </h2>
-//       <div className="w-full flex flex-col justify-center items-center">
-//         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-//           <div>
-//             <input
-//               {...register("Name", { required: "Full Name is required" })}
-//               className="w-full h-10 bg-black text-white border-b border-white mx-20 mb-2 p-2"
-//               placeholder="Full Name"
-//             />
-//             {errors.Name && (
-//               <p className="text-red-500">{errors.Name.message}</p>
-//             )}
-//           </div>
-//           <div>
-//             <input
-//               {...register("Email", { required: "Email is required" })}
-//               className="w-full h-10 bg-black text-white border-b border-white mx-20 mb-2 p-2"
-//               placeholder="Email"
-//             />
-//             {errors.Email && (
-//               <p className="text-red-500">{errors.Email.message}</p>
-//             )}
-//           </div>
-//           <div>
-//             <input
-//               {...register("PhoneNumber", {
-//                 required: "Phone Number is required",
-//               })}
-//               className="w-full h-10 bg-black text-white border-b border-white mx-20 mb-2 p-2"
-//               placeholder="Phone Number"
-//             />
-//             {errors.PhoneNumber && (
-//               <p className="text-red-500">{errors.PhoneNumber.message}</p>
-//             )}
-//           </div>
-//           <div>
-//             <input
-//               {...register("Message", { required: "Message is required" })}
-//               className="w-full h-10 bg-black text-white border-b border-white mx-20 mb-2 p-2"
-//               placeholder="Message"
-//             />
-//             {errors.Message && (
-//               <p className="text-red-500">{errors.Message.message}</p>
-//             )}
-//           </div>
-//           <div className="flex flex-col justify-center items-center mt-5">
-//             <input
-//               type="submit"
-//               className="w-60 h-10 bg-red-600 text-white mt-2 rounded cursor-pointer"
-//               value="Submit"
-//             />
-//           </div>
-//         </form>
-//         <p className="mt-5 text-green-500">{result}</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MessageForm;

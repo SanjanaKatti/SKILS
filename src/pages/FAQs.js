@@ -4,6 +4,7 @@ import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 const FAQs = () => {
   const [faqClicked, setFaqClicked] = useState([
+    // FAQs data remains unchanged
     {
       isClicked: false,
       faq: "What is Kathak?",
@@ -82,6 +83,7 @@ const FAQs = () => {
         "Yes. Personal classes are available in-person and online. Please get in touch over phone or email for more details.",
     },
   ]);
+
   const handleClick = (index) => {
     setFaqClicked((prevState) =>
       prevState.map((item, i) =>
@@ -91,39 +93,42 @@ const FAQs = () => {
   };
 
   return (
-    <div className="flex flex-row mx-auto w-full max-w-[1000px] items-center justify-between content-center h-full">
+    <div className="flex flex-col mx-auto w-full max-w-[1000px] p-4">
       <NavigationBar />
-      <div className="w-full">
-        <h1 className="text-6xl text-red-500 font-bold text-center mt-36 mb-10 max-w-[1000px] mx-auto">
-          FAQs
-        </h1>
-        <div className="w-full max-w-[1000px] mx-auto p-2">
-          {faqClicked.map((question, index) => (
-            <div key={index} className="p-4">
-              <div
-                onClick={() => handleClick(index)}
-                className="flex flex-row justify-start items-center text-xl bg-slate-300 text-neutral-950 cursor-pointer hover:text-red-600"
-              >
-                {question.isClicked ? (
-                  <>
-                    <FaChevronDown />
-                    <h2 className="ml-4 text-left p-2">{question.faq}</h2>
-                  </>
-                ) : (
-                  <>
-                    <FaChevronRight />
-                    <h2 className="ml-4 text-left p-2">{question.faq}</h2>
-                  </>
-                )}
-              </div>
-              {question.isClicked && (
-                <div className="my-2 font-light text-gray-400">
-                  <p>{question.answer}</p>
-                </div>
+      <h1 className="text-4xl md:text-6xl text-red-500 font-bold text-center mt-36 mb-10">
+        FAQs
+      </h1>
+      <div className="w-full max-w-[1000px] mx-auto">
+        {faqClicked.map((question, index) => (
+          <div key={index} className="mb-4">
+            {/* Question */}
+            <div
+              onClick={() => handleClick(index)}
+              className={`flex items-center justify-between p-4 cursor-pointer transition-colors duration-300 ${
+                question.isClicked ? "bg-slate-400" : "bg-slate-300"
+              } hover:bg-slate-400`}
+              aria-expanded={question.isClicked}
+            >
+              {question.isClicked ? (
+                <FaChevronDown className="text-xl text-red-500" />
+              ) : (
+                <FaChevronRight className="text-xl" />
               )}
+              <h2 className="ml-4 text-right text-gray-700 text-lg md:text-xl">
+                {question.faq}
+              </h2>
             </div>
-          ))}
-        </div>
+            {/* Answer */}
+            {question.isClicked && (
+              <div
+                className="p-4 text-gray-700 bg-gray-100 border-l-4 border-red-500 transition-all duration-300"
+                role="region"
+              >
+                <p>{question.answer}</p>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -7,43 +7,24 @@ const Achievements = () => {
   const [awardscount, setAwardsCount] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (stucount < 200) {
-        setStuCount((prevCount) => prevCount + 1);
-      }
-    }, 15);
+    const counters = [
+      { count: stucount, setCount: setStuCount, target: 200, interval: 15 },
+      { count: branchcount, setCount: setBranchCount, target: 3, interval: 900 },
+      { count: performancecount, setCount: setPerformanceCount, target: 1000, interval: 2 },
+      { count: awardscount, setCount: setAwardsCount, target: 11, interval: 200 },
+    ];
 
-    return () => clearInterval(interval);
-  }, [stucount]);
+    const intervals = counters.map(({ count, setCount, target, interval }) =>
+      setInterval(() => {
+        if (count < target) {
+          setCount((prevCount) => prevCount + 1);
+        }
+      }, interval)
+    );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (branchcount < 3) {
-        setBranchCount((prevCount) => prevCount + 1);
-      }
-    }, 900);
-
-    return () => clearInterval(interval);
-  }, [branchcount]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (performancecount < 1000) {
-        setPerformanceCount((prevCount) => prevCount + 1);
-      }
-    }, 2);
-
-    return () => clearInterval(interval);
-  }, [performancecount]);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (awardscount < 11) {
-        setAwardsCount((prevCount) => prevCount + 1);
-      }
-    }, 200);
-
-    return () => clearInterval(interval);
-  }, [awardscount]);
+    // Cleanup intervals on unmount
+    return () => intervals.forEach(clearInterval);
+  }, [stucount, branchcount, performancecount, awardscount]);
 
   return (
     <div className="flex items-center justify-center w-full mx-auto max-w-[1000px] m-20">

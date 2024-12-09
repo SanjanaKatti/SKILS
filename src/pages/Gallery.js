@@ -68,21 +68,20 @@ const Gallery = () => {
     "/AG1/AG14.jpeg",
     "/AG1/AG15.jpeg",
   ];
+  // Other event arrays here...
+
   const [selectedAg, setSelectedAg] = useState("");
-  const textStyleMain = {
-    fontSize: "60px",
-    textTransform: "uppercase",
-    letterSpacing: "2px",
-  };
-  const textStyleSub = {
-    fontSize: "20px",
-    fontWeight: "300",
-  };
+
+  const textStyleMain = "text-4xl md:text-5xl font-bold uppercase text-red-500";
+  const textStyleSub = "text-base md:text-lg font-light";
+
   const danceGallery = ["All", "Concord", "KrishnaVedh"];
   const danceGalleryAg = ["AG6", "AG5", "AG4", "AG3", "AG2", "AG1"];
+
   const handleClick = (event) => {
     setSelectedDanceGallery(event);
   };
+
   const handleAgClick = (event) => {
     setSelectedAg(event);
   };
@@ -90,69 +89,44 @@ const Gallery = () => {
   return (
     <div className="flex flex-col">
       <NavigationBar currentPage="Gallery" />
-      <div
-        style={textStyleMain}
-        className="font-bold text-center text-red-500 pt-36 pb-10"
-      >
-        DANCE GALLERY
+      <div className={`${textStyleMain} text-center py-20`}>Dance Gallery</div>
+      <div className="flex flex-wrap justify-center gap-4">
+        {danceGallery.map((event, index) => (
+          <button
+            key={index}
+            className={`px-4 py-2 rounded ${
+              selectedDanceGallery === event ? "bg-red-600 text-white" : "bg-gray-200"
+            } hover:bg-red-600 hover:text-white`}
+            onClick={() => handleClick(event)}
+          >
+            {event}
+          </button>
+        ))}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row justify-center items-center">
-          {danceGallery.map((event, index) => (
-            <button
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+        {selectedDanceGallery === "All" &&
+          eventImages.map((src, index) => (
+            <img
               key={index}
-              style={textStyleSub}
-              className={`px-[14px] py-[7px] ${
-                selectedDanceGallery === event
-                  ? "bg-red-600"
-                  : "hover:bg-red-600"
-              }`}
-              onClick={() => handleClick(event)}
-            >
-              {event}
-            </button>
+              src={src}
+              alt={`event-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
           ))}
-        </div>
-        <div className="mt-8">
-          {selectedDanceGallery === "All" && (
-            <div className="flex flex-row">
-              <div className="h-96 w-1/3">
-                <img
-                  src={eventImages[0]}
-                  alt="concord1"
-                  className="h-full w-full m-2 object-cover"
-                />
-              </div>
-              <div className="h-96 w-1/3">
-                <img
-                  src={eventImages[1]}
-                  alt="concord2"
-                  className="h-full w-full m-2 object-cover"
-                />
-              </div>
-              <div className="h-96 w-1/3">
-                <img
-                  src={eventImages[2]}
-                  alt="krishnavedh"
-                  className="h-full w-full m-2 object-cover"
-                />
-              </div>
-            </div>
-          )}
-          {selectedDanceGallery === "Concord" && (
+           {selectedDanceGallery === "Concord" && (
             <div className="flex flex-row">
               <div className="w-1/3">
                 <img
                   src={eventImages[0]}
                   alt="concord1"
-                  className="w-full h-96 m-2"
+                  className="w-full h-auto object-cover rounded shadow-md"
                 />
               </div>
               <div className="w-1/3">
                 <img
                   src={eventImages[1]}
                   alt="concord2"
-                  className="w-full h-96 m-2"
+                 className="w-full h-auto object-cover rounded shadow-md"
                 />
               </div>
             </div>
@@ -162,86 +136,80 @@ const Gallery = () => {
               <img
                 src={eventImages[2]}
                 alt="krishnavedh"
-                className="w-full h-96 m-2"
+                className="w-full h-auto object-cover rounded shadow-md"
               />
             </div>
           )}
-        </div>
       </div>
-      <div style={textStyleMain} className="font-bold text-center pt-6 pb-10">
-        AVANT GARDE
+      <div className={`${textStyleMain} text-center py-10`}>Avant Garde</div>
+      <div className="flex flex-wrap justify-center gap-4">
+        {danceGalleryAg.map((event, index) => (
+          <button
+            key={index}
+            className={`px-4 py-2 rounded ${
+              selectedAg === event ? "bg-red-600 text-white" : "bg-gray-200"
+            } hover:bg-red-600 hover:text-white`}
+            onClick={() => handleAgClick(event)}
+          >
+            {event}
+          </button>
+        ))}
       </div>
-      <div className="flex flex-col mt-8">
-        <div className="flex flex-row justify-center items-center">
-          {danceGalleryAg.map((event, index) => (
-            <button
+      <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+        {selectedAg === "AG6" &&
+          eventsAg6.map((src, index) => (
+            <img
               key={index}
-              style={textStyleSub}
-              className={`px-[14px] py-[7px] ${
-                selectedAg === event ? "bg-red-600" : "hover:bg-red-600"
-              }`}
-              onClick={() => handleAgClick(event)}
-            >
-              {event}
-            </button>
+              src={src}
+              alt={`AG6-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
           ))}
-        </div>
-        <div className="mt-8">
-          {selectedAg === "AG6" && (
-            <div className="flex flex-wrap">
-              {eventsAg6.map((image, index) => (
-                <div key={index} className="w-1/2 p-2">
-                  <img src={image} alt={`AG6${index}`} />
-                </div>
-              ))}
-            </div>
-          )}
-          {selectedAg === "AG5" && (
-            <div className="flex flex-wrap">
-              {eventsAg5.map((image, index) => (
-                <div key={index} className="w-1/2 p-2">
-                  <img src={image} alt={`AG5${index}`} />
-                </div>
-              ))}
-            </div>
-          )}
-          {selectedAg === "AG4" && (
-            <div className="flex flex-wrap">
-              {eventsAg4.map((image, index) => (
-                <div key={index} className="w-1/2 p-2">
-                  <img src={image} alt={`AG4${index}`} />
-                </div>
-              ))}
-            </div>
-          )}
-          {selectedAg === "AG3" && (
-            <div className="flex flex-wrap">
-              {eventsAg3.map((image, index) => (
-                <div key={index} className="w-1/2 p-2">
-                  <img src={image} alt={`AG3${index}`} />
-                </div>
-              ))}
-            </div>
-          )}
-          {selectedAg === "AG2" && (
-            <div className="flex flex-wrap">
-              {eventsAg2.map((image, index) => (
-                <div key={index} className="w-1/2 p-2">
-                  <img src={image} alt={`AG2${index}`} />
-                </div>
-              ))}
-            </div>
-          )}
-          {selectedAg === "AG1" && (
-            <div className="flex flex-wrap">
-              {eventsAg1.map((image, index) => (
-                <div key={index} className="w-1/2 p-2">
-                  <img src={image} alt={`AG1${index}`} />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        {selectedAg === "AG5" &&
+          eventsAg5.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`AG5-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
+        ))}
+        {selectedAg === "AG4" &&
+          eventsAg4.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`AG4-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
+          ))}
+          {selectedAg === "AG3" &&
+          eventsAg3.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`AG3-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
+          ))}
+          {selectedAg === "AG2" &&
+          eventsAg2.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`AG2-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
+          ))}
+          {selectedAg === "AG1" &&
+          eventsAg1.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`AG1-${index}`}
+              className="w-full h-auto object-cover rounded shadow-md"
+            />
+          ))}
       </div>
     </div>
   );

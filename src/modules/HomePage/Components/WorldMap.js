@@ -35,11 +35,15 @@ const WorldMap = () => {
   });
 
   return (
-    <div className="flex flex-row m-20 mx-auto max-w-[1000px] items-center justify-between content-center h-full">
+    <div className="flex flex-col sm:flex-row m-5 sm:m-10 mx-auto max-w-[1000px] items-center justify-between content-center h-full">
       <MapContainer
         center={[20.0, 0.0]}
         zoom={2}
-        style={{ height: "500px", width: "100%" }}
+        style={{
+          height: "300px",  // smaller height for smaller screens
+          width: "100%",
+        }}
+        className="sm:h-[500px]"  // larger height for larger screens
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
